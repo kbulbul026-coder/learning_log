@@ -6,6 +6,9 @@ from .models import Topic, Entry
 #for form
 from .forms import TopicForm, EntryForm
 
+
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 def index(request):
    """The home page for Learning Log."""
@@ -13,6 +16,8 @@ def index(request):
 
 from .models import Topic
 
+
+@login_required
 def topics(request):
    """Show all topics."""
    topics = Topic.objects.order_by('date_added')
