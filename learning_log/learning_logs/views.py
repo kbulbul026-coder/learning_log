@@ -51,7 +51,10 @@ def new_topic(request):
         # POST data submitted; process data.
         form = TopicForm(data=request.POST)
         if form.is_valid():
-            form.save()
+            #topic.owner_id assigned
+            new_topic=form.save(commit = False)
+            new_topic.owner = request.user
+            new_topic.save()
             return redirect('learning_logs:topics')
     # Display a blank or invalid form.
     context = {'form': form}
@@ -73,8 +76,9 @@ def new_entry(request, topic_id):
         if form.is_valid():
             new_entry = form.save(commit=False)
             new_entry.topic = topic
-            new_entry.save()
-
+            #new_entry.topic.owner_id assigned
+            if topic.owner == request.user:
+                new_entry.save()
             return redirect('learning_logs:topic', topic_id=topic_id)
     # Display a blank or invalid form.
     context = {'topic': topic, 'form': form}
@@ -88,7 +92,8 @@ def edit_entry(request, entry_id):
     """Edit an existing entry."""
     entry = Entry.objects.get(id=entry_id)
     topic = entry.topic
- 
+    if topic.owner != request.user:
+        raise Http404 
     if request.method != 'POST':
         # Initial request; pre-fill form with the current entry.
         form = EntryForm(instance=entry)
