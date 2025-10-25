@@ -6,8 +6,11 @@ from .models import Topic, Entry
 #for form
 from .forms import TopicForm, EntryForm
 
-
+#login is must
 from django.contrib.auth.decorators import login_required
+#for not found
+from django.http import Http404
+
 
 # Create your views here.
 def index(request):
@@ -20,18 +23,25 @@ from .models import Topic
 @login_required
 def topics(request):
    """Show all topics."""
-   topics = Topic.objects.order_by('date_added')
+
+   topics = Topic.objects.filter(owner=request.user).order_by('date_added')
    context = {'topics': topics}
    return render(request, 'learning_logs/topics.html', context)
 
+
+@login_required
 def topic(request, topic_id):
     """Show a single topic and all its entries."""
     topic = Topic.objects.get(id=topic_id)
+    # Make sure the topic belongs to the current user.
+    if topic.owner != request.user:
+        raise Http404
     entries = topic.entry_set.order_by('-date_added')
     context = {'topic': topic, 'entries': entries}
     return render(request, 'learning_logs/topic.html', context)
 
 #form
+@login_required
 def new_topic(request):
     """Add a new topic."""
     if request.method != 'POST':
@@ -49,7 +59,7 @@ def new_topic(request):
 
 
 #new entry form
-
+@login_required
 def new_entry(request, topic_id):
     """Add a new entry for a particular topic."""
     topic = Topic.objects.get(id=topic_id)
@@ -73,7 +83,7 @@ def new_entry(request, topic_id):
 
 
 #edit entry
-
+@login_required
 def edit_entry(request, entry_id):
     """Edit an existing entry."""
     entry = Entry.objects.get(id=entry_id)
