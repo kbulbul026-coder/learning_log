@@ -53,7 +53,14 @@
       
       <li class="nav-item">
 
-        <a class="nav-link" href="{% url 'users:logout' %}">Log out</a>
+       <!-- Correct and secure -->
+<form action="{% url 'users:logout' %}" method="post">
+  {% csrf_token %}
+  <button type="submit"class="logout-link">Log Out</button>
+</form>
+
+       
+
 
       </li>
 
