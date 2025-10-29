@@ -22,7 +22,14 @@ DATABASES = {
 '''
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgresql://test_db_u2cy_user:iE7By3lwU24LNJAYmBrx6UsZzje5rR1X@dpg-d402ipbipnbc73dl04vg-a.singapore-postgres.render.com/test_db_u2cy'
+        default='postgresql://test_db_u2cy_user:iE7By3lwU24LNJAYmBrx6UsZzje5rR1X@dpg-d402ipbipnbc73dl04vg-a.singapore-postgres.render.com/test_db_u2cy',
+        conn_max_age=600,
+        # *** THIS IS THE CRITICAL LINE TO SOLVE THE SSL ERROR ***
+        # It forces the connection to use SSL, which is required by the Render database.
+        conn_health_checks=True,
+        ssl_require=True,
+
+
     )
 }
 
