@@ -1,20 +1,8 @@
-pycache/
-*.pyc
-*.pyo
 
 
-*.pyd
-.venv/
-env/
-ll_venv/
-venv/
-pip-log.txt
-pip-delete-this-directory.txt
-.tox/
-.mypy_cache/
-.pytest_cache/
-​Django specific files
-​*.log
-*.sqlite3  # Exclude local database file
-/static_collected/ # Exclude collected static files
-/media/ # Exclude user uploaded media
+
+
+
+
+ll_env/
+
