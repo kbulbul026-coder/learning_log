@@ -12,6 +12,8 @@ __pycache__/
 venv/
 env/
 .venv/
+# Ignore the Python virtual environment folder
+ll_env/
 
 # Dependencies
 # To ignore pip-created virtualenvs.
