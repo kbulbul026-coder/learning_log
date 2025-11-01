@@ -1,9 +1,12 @@
 pycache/
 *.pyc
 *.pyo
+
+
 *.pyd
 .venv/
 env/
+ll_venv/
 venv/
 pip-log.txt
 pip-delete-this-directory.txt
