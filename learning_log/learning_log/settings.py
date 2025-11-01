@@ -53,7 +53,23 @@ SECRET_KEY = 'django-insecure-%nu*-i5bbgi5voq(xej_t8=s1^s2)g6tvo0m1df@d-$di1!4-&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = []
+# In your settings.py file
+
+#ALLOWED_HOSTS = [] # This is likely what you have now
+
+# Change it to:
+ALLOWED_HOSTS = [
+    'learning-logs-l6qy.onrender.com',
+    'localhost',  # Good practice for local development
+    '127.0.0.1',  # Good practice for local development
+]
+
+
+# Add this alongside your ALLOWED_HOSTS setting
+CSRF_TRUSTED_ORIGINS = [
+    'https://learning-logs-l6qy.onrender.com',
+]
 
 
 # Application definition
@@ -178,3 +194,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # My settings
 LOGIN_URL = 'users:login'
+
+
