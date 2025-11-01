@@ -1,0 +1,47 @@
+2025-11-01 12:59:45.454 IST [28260] LOG:  starting PostgreSQL 17.0 on aarch64-unknown-linux-android, compiled by Android (13624864, +pgo, +bolt, +lto, +mlgo, based on r530567e) clang version 19.0.1 (https://android.googlesource.com/toolchain/llvm-project 97a699bf4812a18fb657c2779f5296a4ab2694d2), 64-bit
+2025-11-01 12:59:45.455 IST [28260] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2025-11-01 12:59:45.458 IST [28260] LOG:  listening on Unix socket "/data/data/com.termux/files/usr/tmp/.s.PGSQL.5432"
+2025-11-01 12:59:45.493 IST [28265] LOG:  database system was shut down at 2025-11-01 12:59:24 IST
+2025-11-01 12:59:45.505 IST [28260] LOG:  database system is ready to accept connections
+2025-11-01 12:59:57.482 IST [28272] FATAL:  lock file "postmaster.pid" already exists
+2025-11-01 12:59:57.482 IST [28272] HINT:  Is another postmaster (PID 28260) running in data directory "/data/data/com.termux/files/usr/var/lib/postgresql"?
+2025-11-01 13:01:36.661 IST [28535] FATAL:  role "postgres" does not exist
+2025-11-01 13:01:36.731 IST [28538] FATAL:  role "postgres" does not exist
+2025-11-01 13:01:36.745 IST [28540] FATAL:  role "postgres" does not exist
+2025-11-01 13:01:36.756 IST [28542] FATAL:  role "postgres" does not exist
+2025-11-01 13:01:36.795 IST [28544] FATAL:  role "postgres" does not exist
+2025-11-01 13:01:36.804 IST [28546] FATAL:  role "postgres" does not exist
+2025-11-01 13:01:36.813 IST [28548] FATAL:  role "postgres" does not exist
+2025-11-01 13:01:36.823 IST [28550] FATAL:  role "postgres" does not exist
+2025-11-01 13:01:36.832 IST [28552] FATAL:  role "postgres" does not exist
+2025-11-01 13:01:36.845 IST [28554] FATAL:  role "postgres" does not exist
+2025-11-01 13:01:39.609 IST [28558] FATAL:  role "postgres" does not exist
+2025-11-01 13:01:39.653 IST [28560] FATAL:  role "postgres" does not exist
+2025-11-01 13:01:39.663 IST [28562] FATAL:  role "postgres" does not exist
+2025-11-01 13:01:39.673 IST [28564] FATAL:  role "postgres" does not exist
+2025-11-01 13:01:39.700 IST [28566] FATAL:  role "postgres" does not exist
+2025-11-01 13:01:39.709 IST [28568] FATAL:  role "postgres" does not exist
+2025-11-01 13:01:39.723 IST [28570] FATAL:  role "postgres" does not exist
+2025-11-01 13:01:39.731 IST [28572] FATAL:  role "postgres" does not exist
+2025-11-01 13:01:39.740 IST [28574] FATAL:  role "postgres" does not exist
+2025-11-01 13:01:39.751 IST [28576] FATAL:  role "postgres" does not exist
+2025-11-01 13:04:45.594 IST [28263] LOG:  checkpoint starting: time
+2025-11-01 13:04:49.769 IST [28263] LOG:  checkpoint complete: wrote 44 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.132 s, sync=0.015 s, total=4.176 s; sync files=11, longest=0.003 s, average=0.002 s; distance=259 kB, estimate=259 kB; lsn=0/152EDA0, redo lsn=0/152ED48
+2025-11-01 16:43:25.467 IST [21915] FATAL:  role "postgres" does not exist
+2025-11-01 16:43:25.542 IST [21918] FATAL:  role "postgres" does not exist
+2025-11-01 16:43:25.558 IST [21920] FATAL:  role "postgres" does not exist
+2025-11-01 16:43:25.597 IST [21922] FATAL:  role "postgres" does not exist
+2025-11-01 16:43:25.608 IST [21924] FATAL:  role "postgres" does not exist
+2025-11-01 16:43:25.625 IST [21927] FATAL:  role "postgres" does not exist
+2025-11-01 16:43:25.640 IST [21929] FATAL:  role "postgres" does not exist
+2025-11-01 16:43:25.656 IST [21931] FATAL:  role "postgres" does not exist
+2025-11-01 16:43:25.672 IST [21933] FATAL:  role "postgres" does not exist
+2025-11-01 16:44:04.965 IST [22055] FATAL:  role "postgres" does not exist
+2025-11-01 16:44:05.017 IST [22058] FATAL:  role "postgres" does not exist
+2025-11-01 16:44:05.027 IST [22060] FATAL:  role "postgres" does not exist
+2025-11-01 16:44:05.055 IST [22062] FATAL:  role "postgres" does not exist
+2025-11-01 16:44:05.065 IST [22064] FATAL:  role "postgres" does not exist
+2025-11-01 16:44:05.078 IST [22066] FATAL:  role "postgres" does not exist
+2025-11-01 16:44:05.089 IST [22068] FATAL:  role "postgres" does not exist
+2025-11-01 16:44:05.101 IST [22071] FATAL:  role "postgres" does not exist
+2025-11-01 16:44:05.114 IST [22073] FATAL:  role "postgres" does not exist

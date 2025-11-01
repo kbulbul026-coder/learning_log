@@ -12,14 +12,13 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 
-
 import dj_database_url
 import os
 '''
 DATABASES = {
     "default": dj_database_url.parse(os.environ.get("postgresql://test_db_u2cy_user:iE7By3lwU24LNJAYmBrx6UsZzje5rR1X@dpg-d402ipbipnbc73dl04vg-a.singapore-postgres.render.com/test_db_u2cy",))
 }
-'''
+
 DATABASES = {
     'default': dj_database_url.config(
         default='postgresql://test_db_u2cy_user:iE7By3lwU24LNJAYmBrx6UsZzje5rR1X@dpg-d402ipbipnbc73dl04vg-a.singapore-postgres.render.com/test_db_u2cy',
@@ -33,7 +32,13 @@ DATABASES = {
     )
 }
 
-
+DATABASES = {
+    'default': dj_database_url.config(
+        default='postgresql://postgres:postgres@localhost:5432/mysite',
+        conn_max_age=600
+    )
+}
+'''
 #postgresql://test_db_u2cy_user:iE7By3lwU24LNJAYmBrx6UsZzje5rR1X@dpg-d402ipbipnbc73dl04vg-a.singapore-postgres.render.com/test_db_u2cy
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -73,6 +78,9 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+
+    'whitenoise.middleware.WhiteNoiseMiddleware', 
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -104,6 +112,7 @@ WSGI_APPLICATION = 'learning_log.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -111,6 +120,14 @@ DATABASES = {
     }
 }
 
+'''
+
+DATABASES = {
+    'default': dj_database_url.config(
+        default='postgresql://test_db_pt1d_user:Loh6nozErWonfLDg1y6jyhVVIQQ0REh8@dpg-d42urbh5pdvs73dgq56g-a.singapore-postgres.render.com/test_db_pt1d',
+        conn_max_age=600
+    )
+}
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
@@ -145,8 +162,14 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+#STATIC_URL = 'static/'
 
+STATIC_URL = '/static/'
+
+if not DEBUG:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
